@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
 
 class GetData {
   final double inr;
@@ -21,3 +22,13 @@ class GetData {
     );
   }
 }
+
+// To parse this JSON data, do
+//
+//     final welcome = welcomeFromJson(jsonString);
+
+Map<String, String> allCurrenciesFromJson(String str) =>
+    Map.from(json.decode(str)).map((k, v) => MapEntry<String, String>(k, v));
+
+String allCurrenciesToJson(Map<String, String> data) =>
+    json.encode(Map.from(data).map((k, v) => MapEntry<String, dynamic>(k, v)));

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:global_currency/Screens/Home.dart';
+import 'package:global_currency/Screens/currency_converter.dart';
 
 void main() {
-  runApp(CurrencyApp());
+  runApp(MaterialApp(
+    home: CurrencyApp(),
+    debugShowCheckedModeBanner: false,
+  ));
 }
 
 class CurrencyApp extends StatefulWidget {
@@ -13,6 +17,6 @@ class CurrencyApp extends StatefulWidget {
 class _CurrencyAppState extends State<CurrencyApp> {
   @override
   Widget build(BuildContext context) {
-    return Home();
+    return CurrencyConverter();
   }
 }

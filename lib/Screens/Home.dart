@@ -17,7 +17,7 @@ Future<List<GetData>> apiCall() async {
     Uri.parse(
         'https://openexchangerates.org/api/latest.json?app_id=c0217358131f4f5e981823bd8a42073d'),
   );
-  print('responsevvvvvvvvvvvv$response');
+  // print('responsevvvvvvvvvvvv$response');
   if (response.statusCode != 200) {
     throw Exception('Failed to load album');
   }
@@ -29,8 +29,8 @@ Future<List<GetData>> apiCall() async {
   );
 
  // myMap = GetData.fromJson(jsonDecode(response.body),) as Map<String, dynamic>;
-  print('response===${response.body}');
-  print('myMap: $myMap');
+  print('response===Home Page line 32${response.body}');
+  // print('myMap: $myMap');
   print('response=======================${api[0].inr}');
   print('response=======================${api[0].aud}');
   print('response=======================${api[0].eur}');
@@ -53,7 +53,8 @@ class _HomeState extends State<Home> {
     // TODO: implement initState
     super.initState();
     futureValue = apiCall();
-    fetchCurrencies();
+    // fetchCurrencies();
+    fetchrates();
   }
 
   @override

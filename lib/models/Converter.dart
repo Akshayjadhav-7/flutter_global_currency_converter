@@ -26,8 +26,6 @@ class GetData {
 
 
 
-
-
 // To parse this JSON data, do
 //
 //     final welcome = welcomeFromJson(jsonString);
@@ -42,16 +40,9 @@ String allCurrenciesToJson(Map<String, String> data) =>
 
 
 
-
-
-
-
-
 // To parse this JSON data, do
 //
 //     final rateModel = rateModelFromJson(jsonString);
-
-
 
 RateModel rateModelFromJson(String str) => RateModel.fromJson(json.decode(str));
 
@@ -73,41 +64,19 @@ class RateModel {
   Map<String, double> rates;
 
   factory RateModel.fromJson(Map<String, dynamic> json) => RateModel(
-    disclaimer: json["disclaimer"],
-    license: json["license"],
-    timestamp: json["timestamp"],
-    base: json["base"],
-    rates: Map.from(json["rates"]).map((k, v) => MapEntry<String, double>(k, v.toDouble())),
-  );
+        disclaimer: json["disclaimer"],
+        license: json["license"],
+        timestamp: json["timestamp"],
+        base: json["base"],
+        rates: Map.from(json["rates"])
+            .map((k, v) => MapEntry<String, double>(k, v.toDouble())),
+      );
 
   Map<String, dynamic> toJson() => {
-    "disclaimer": disclaimer,
-    "license": license,
-    "timestamp": timestamp,
-    "base": base,
-    "rates": Map.from(rates).map((k, v) => MapEntry<String, dynamic>(k, v)),
-  };
+        "disclaimer": disclaimer,
+        "license": license,
+        "timestamp": timestamp,
+        "base": base,
+        "rates": Map.from(rates).map((k, v) => MapEntry<String, dynamic>(k, v)),
+      };
 }
-
-
-
-
-// Future<Map> fetchCurrencies() async {
-//   print('entered fetchCurrencies');
-//   final response = await http.get(
-//     Uri.parse(
-//         'https://openexchangerates.org/api/currencies.json?app_id=c0217358131f4f5e981823bd8a42073d'),
-//   );
-//
-//   final finalcurrencies = allCurrenciesFromJson(response.body);
-//   print("Welcome: line 17: ${response.body}");
-//
-//   myMap = allCurrenciesFromJson(
-//     jsonDecode(response.body),
-//   );
-//
-//   print('myMap:$myMap');
-//   // allCurrencies.fromJson(jsonDecode(response.body),) as Map<String, dynamic>;
-//   // print("Welcome: line 18: $welcome");
-//   return myMap;
-// }

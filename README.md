@@ -1,7 +1,11 @@
 # global_currency
 
 A new Flutter application. Shows Realtime Currency rates & Convert them into required Currency.
+this is a multi screen Application, Global Currency displays popular Currencies exchange rates on Home Screen.
+On Second page we can Convert any currency to USD, or Any currency to Any currency.
 
+![News app flutter](https://github.com/Akshayjadhav-7/flutter_global_currency_converter/blob/master/images/homeScreen.png)
+![News app flutter](https://github.com/Akshayjadhav-7/flutter_global_currency_converter/blob/master/images/converterScreen.png)
 ## Getting Started
 
 This project is a starting point for a Flutter application.

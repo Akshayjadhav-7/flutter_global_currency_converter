@@ -204,6 +204,8 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                                     onChanged: (String? newValue) {
                                       setState(() {
                                         dropdownValue2 = newValue!;
+                                        
+                                        print('dropDownValu2 line no 208:::$dropdownValue2');
                                       });
                                     },
                                   ),
@@ -223,6 +225,7 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                                     onChanged: (String? newValue) {
                                       setState(() {
                                         dropdownValue3 = newValue!;
+                                        print('dropDownValu2 line no 208:::$dropdownValue3');
                                       });
                                     },
                                   ),

@@ -10,6 +10,7 @@ import '../models/Converter.dart';
 import '../screens/currency_converter.dart';
 
 List<GetData> api = [];
+// Map<String, double> api = {};
 Map<String, double> rateMap = {};
 
 Future<Map<String, double>> fetchRates() async {
@@ -23,7 +24,7 @@ Future<Map<String, double>> fetchRates() async {
   return rateMap;
 }
 
-Future<List<GetData>> apiCall() async {
+Future<List<GetData>>apiCall() async {
   print('enteredddddddddddd');
   var response = await http.get(
     Uri.parse(
@@ -118,7 +119,13 @@ class _HomeState extends State<Home> {
     // futureMap =
     fetchRates();
   }
-
+@override
+  // void dispose() {
+  //   // TODO: implement dispose
+  //   super.dispose();
+  //   futureValue = apiCall();
+  //   fetchRates();
+  // }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
